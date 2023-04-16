@@ -22,7 +22,7 @@ public class PetLoveApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         if(taiKhoanRepository.count()==0){
-            TaiKhoan taiKhoan = new TaiKhoan("hungdc","20110072@hcmute.edu.vn","123456789",
+            TaiKhoan taiKhoan = new TaiKhoan("hungdc","20110072@student.hcmute.edu.vn","123456789",
                     Arrays.asList(EnumRole.ROLE_ADMIN.name()));
             taiKhoanRepository.save(taiKhoan);
         }
