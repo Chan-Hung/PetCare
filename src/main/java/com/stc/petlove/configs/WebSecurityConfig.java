@@ -48,7 +48,7 @@ public class WebSecurityConfig {
                 .antMatchers("/webjars/**").permitAll()
                 .antMatchers("/swagger-resources/**").permitAll()
                 .antMatchers("/v2/**").permitAll()
-                .antMatchers(HttpMethod.POST, "/rest/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/rest/**").permitAll()
                 .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .antMatchers(HttpMethod.POST, pattern.toArray(new String[0])).permitAll()
                 .anyRequest().authenticated().and()
