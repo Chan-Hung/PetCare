@@ -74,7 +74,8 @@ public class TaiKhoanServiceImpl implements TaiKhoanService{
         if (ObjectUtils.isEmpty(dto.getRoles())) {
             throw new InvalidException("vai trò tài khoản không được bỏ trống");
         }
-        if (taiKhoanRepository.kiemTraEmail(dto.getEmail().trim())){
+        if (!taiKhoan.getEmail().equalsIgnoreCase(dto.getEmail().trim())
+                && taiKhoanRepository.kiemTraEmail(dto.getEmail().trim())){
             throw new InvalidException(String.format("Email %s đã tồn tại",
                     dto.getEmail()));
         }
